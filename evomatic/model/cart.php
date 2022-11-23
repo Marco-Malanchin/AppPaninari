@@ -23,7 +23,17 @@ class Cart{
         where product_ID = " . $p_ID ." and cart_ID = " . $c_ID . ";";
         return $sql;
     }
-    
+    function deleteItem($p_ID, $c_ID){
+        $sql = "delete from cart_product
+        where product_ID = " . $p_ID ." and cart_ID = " . $c_ID . ";";
+        return $sql;
+    }
+    function addItem($p_ID, $c_ID){
+        $sql = "
+        insert into cart_product(cart_ID, product_ID, quantity)
+        values(" . $c_ID . ", " . $p_ID .", 1);";
+        return $sql;
+    }
 }
 
 ?>

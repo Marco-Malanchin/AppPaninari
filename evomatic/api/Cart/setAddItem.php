@@ -9,7 +9,7 @@ $prod_ID = 1;
 $cart_ID = 1;
 
 $cart = new Cart();
-$queryAddItem = $cart->setCartItemsAdd($prod_ID, $cart_ID);
+$queryAddItem = $cart->addItem($prod_ID, $cart_ID);
 
 $result = $conn->query($queryAddItem);
 print_r($result);
